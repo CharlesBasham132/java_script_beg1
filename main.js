@@ -4,14 +4,17 @@ var num1, num2;
 var carForm;
 
 function handleChange(event) {
-    var total;
-    for (var i=0; carForm.length; i++)
+    var total = 0;
+    for (var i=0; i < carForm.extras.length; i++)
 	{
-        if(carForm[i].checked) {
-            total = total + parseInt(carForm[i].value);
+        if(carForm.extras[i].checked) {
+            total = total + parseInt(carForm.extras[i].value);
         }
     }
 }
+
+document.getElementById("result").innerHTML = "£" + total;
+
 function main() {
     myName = "Charles";
     num1 = 10;
